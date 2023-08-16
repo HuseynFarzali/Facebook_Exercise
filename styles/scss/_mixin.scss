@@ -1,0 +1,47 @@
+@mixin flex($flex-direction: row, $justify-content: center, $align-items: center, $gap: 0) {
+    display: flex;
+    flex-direction: $flex-direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    gap: $gap;
+}
+
+@mixin notification-count-panel {
+    height: 18px;
+    width: fit-content;
+    max-width: 36px;
+    border-radius: 16px;
+    padding: 4px 8px;
+
+    background-color: $notif-bg-color;
+    color: white;
+    font-size: $base-text-font-size;
+    font-family: Arial, Helvetica, sans-serif;
+
+    @include flex;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+@mixin logo-layout {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $icon-bg-color;
+
+    @include flex;
+
+    font-size: $icon-logo-size;
+}
+
+@mixin icon-layout {
+    height: 100%;
+    width: 100%;
+    
+    font-size: $brand-logo-size-md;
+    position: relative;
+    flex-grow: 1;
+
+    @include flex;
+}

@@ -1,0 +1,141 @@
+@import "_mixin.scss";
+@import "_variables.scss";
+
+* {
+    padding: 0; margin: 0; box-sizing: border-box;
+}
+
+body {
+    @include flex;
+
+    .main-container {
+        width: $main-container-width;
+        height: 600px;
+    
+        @include flex($flex-direction: column);
+
+        .header {
+            width: $header-width;
+            height: $header-height;
+            padding: 0 64px;
+            border: 1px solid $brand-main-color;
+
+            @include flex($justify-content: space-between);
+
+            .section {
+                margin: 8px 0;
+            }
+
+            .section--search {
+                @include flex($gap: 16px);
+
+                width: 96px;
+                height: 40px;
+
+                .fb-logo {
+                    color: $brand-main-color;
+                    font-size: $brand-logo-size-lg;
+                }
+                
+                .search-logo {
+                    @include logo-layout;
+                }
+            }
+
+            .section--service {
+                @include flex($gap: 64px);
+
+                width: 533px;
+                height: 40px;
+
+                .icon {
+                    @include icon-layout;
+                }
+
+                .notif-count {
+                    @include notification-count-panel;
+                }
+
+                .main-page-icon {
+                    @include flex;
+                    color: $brand-main-color;
+                    border-bottom: 2px solid $brand-main-color;
+                }
+            }
+
+            .section--notif {
+                @include flex($gap: 16px);
+
+                width: 222px;
+                height: 40px;
+
+                .icon {
+                    @include logo-layout;
+                }
+            }
+        }
+
+        .dark-header {
+            width: $header-width;
+            height: $header-height;
+            padding: 0 64px;
+            border: 1px solid $brand-main-color;
+            background-color: $brand-dark-bg-color;
+
+            @include flex($justify-content: space-between);
+
+            .section {
+                margin: 8px 0;
+            }
+
+            .section--search {
+                @include flex($gap: 16px);
+
+                width: 96px;
+                height: 40px;
+
+                .fb-logo {
+                    color: $brand-main-color;
+                    font-size: $brand-logo-size-lg;
+                }
+                
+                .search-logo {
+                    @include logo-layout;
+                }
+            }
+
+            .section--service {
+                @include flex($gap: 64px);
+
+                width: 533px;
+                height: 40px;
+
+                .icon {
+                    @include icon-layout;
+                    color: white;
+                }
+
+                .notif-count {
+                    @include notification-count-panel;
+                }
+
+                .main-page-icon {
+                    @include flex;
+                    color: $brand-main-color;
+                    border-bottom: 2px solid $brand-main-color;
+                }
+            }
+
+            .section--notif {
+                @include flex($gap: 16px);
+
+                width: 222px;
+                height: 40px;
+
+                .icon {
+                    @include logo-layout;
+                }
+            }
+        }
+    }
+}
